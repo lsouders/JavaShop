@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project4.CoffeeOrderController">
+   <children>
+      <GridPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="homeButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#returnHome" text="Return to RU Cafe Home" />
+            <MenuButton fx:id="CupSizeButton" mnemonicParsing="false" text="Cup Size" GridPane.rowIndex="1">
+              <items>
+                <MenuItem fx:id="VentiCup" mnemonicParsing="false" onAction="#setSizeVenti" text="Venti" />
+                <MenuItem fx:id="GrandeCup" mnemonicParsing="false" onAction="#setSizeGrande" text="Grande" />
+                  <MenuItem fx:id="TallCup" mnemonicParsing="false" onAction="#setSizeTall" text="Tall" />
+                  <MenuItem fx:id="ShortCup" mnemonicParsing="false" onAction="#setSizeShort" text="Small" />
+              </items>
+            </MenuButton>
+            <GridPane fx:id="AddInsPane" GridPane.rowIndex="2">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <CheckBox fx:id="SweetCream" mnemonicParsing="false" onAction="#updateSweetCream" text="Sweet Creeam" />
+                  <CheckBox fx:id="FrenchVanilla" mnemonicParsing="false" onAction="#updateFrenchVanilla" text="French Vanilla" GridPane.columnIndex="1" />
+                  <CheckBox fx:id="IrishCream" mnemonicParsing="false" onAction="#updateIrishCream" text="Irish Cream" GridPane.rowIndex="1" />
+                  <CheckBox fx:id="Caramel" mnemonicParsing="false" onAction="#updateCaramel" text="Caramel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <CheckBox fx:id="Mocha" mnemonicParsing="false" onAction="#updateMocha" text="Mocha" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <MenuButton fx:id="CupQuantity" mnemonicParsing="false" text="Quantity" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <items>
+                <MenuItem fx:id="q1" mnemonicParsing="false" onAction="#setCupQuantity1" text="1" />
+                <MenuItem fx:id="q2" mnemonicParsing="false" onAction="#setCupQuantity2" text="2" />
+                  <MenuItem fx:id="q3" mnemonicParsing="false" onAction="#setCupQuantity3" text="3" />
+                  <MenuItem fx:id="q4" mnemonicParsing="false" onAction="#setCupQuantity4" text="4" />
+                  <MenuItem fx:id="q5" mnemonicParsing="false" onAction="#setCupQuantity5" text="5" />
+              </items>
+            </MenuButton>
+            <TextArea fx:id="CoffeeSubtotal" editable="false" prefHeight="200.0" prefWidth="200.0" promptText="Running Subtotal: " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
+               <image>
+                  <Image url="@CoffeeView.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="ClearOrder" mnemonicParsing="false" onAction="#resetOrder" text="Clear the Order" GridPane.rowIndex="3" />
+            <Button fx:id="AddToBasket" mnemonicParsing="false" onAction="#addToBasket" text="Add to Basket" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
